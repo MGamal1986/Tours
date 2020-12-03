@@ -1,0 +1,25 @@
+@import "../../styles/colors";
+@mixin Title {
+    text-transform: capitalize;
+    color: $titleColor;
+    font-weight: bold;
+    font-size: 2.5rem;
+    position: relative;
+}
+.Title {
+    @include Title;
+}
+.Title_under {
+    @include Title;
+    &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: $underLineColor;
+    }
+}
